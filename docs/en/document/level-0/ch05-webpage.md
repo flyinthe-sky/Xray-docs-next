@@ -28,6 +28,30 @@ Now let's answer the second question:
 
    ![Nginx default interface](./ch05-img01-nginx-default-running.png)
 
+3. If you don't see the page it means the ports 80 and 443 are allowed in ufw settings. Let's allow them:
+   
+  ```shell
+   sudo ufw allow 'Nginx Full'
+  ```
+
+To check write down: 
+
+  ```shell
+   sudo ufw status
+  ```
+
+If you see the following in result, then the traffic for Nginx is allowed and the page should successfully open:
+
+  ```shell
+   Status: active
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere
+Nginx Full                 ALLOW       Anywhere
+22/tcp (v6)                ALLOW       Anywhere (v6)
+Nginx Full (v6)            ALLOW       Anywhere (v6)
+  ```
+
 ## 5.3 Create the simplest web page
 
 1. Basic Linux commands for beginners:
